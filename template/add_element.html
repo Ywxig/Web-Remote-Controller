@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+#include ui/ui.css
+</head>
+<body>
+
+    <button class="openbtn" onclick="openNav()"><b>Меню</b></button>
+
+#insert template/sadebar.html
+    
+    <form action="/element" method="POST" id="main">
+
+        <input type="text" name="url" value="Адрес:">
+        <input type="text" name="text" value="Имя кнопки:">
+        <button type="submit">Добавить</button>
+
+        <br>
+        <div class="form_radio_btn" align="center">
+          <input id="radio-1" type="radio" name="button-ico" value="ico-1" checked>
+          <label for="radio-1">проект python</label>
+        </div>
+        <br>
+        <div class="form_radio_btn">
+          <input id="radio-2" type="radio" name="button-ico" value="ico-2">
+          <label for="radio-2">чат бот для discord</label>
+        </div>
+        <br>
+        <div class="form_radio_btn">
+          <input id="radio-3" type="radio" name="button-ico" value="ico-3">
+          <label for="radio-3">чат бот для telegram</label>
+        </div>
+        <br>
+        <div class="form_radio_btn">
+          <input id="radio-4" type="radio" name="button-ico" value="ico-4">
+          <label for="radio-4">приложение с GUI (TK)</label>
+        </div>
+        <br>
+        <div class="form_radio_btn">
+          <input id="radio-5" type="radio" name="button-ico" value="ico-5">
+          <label for="radio-5">Web приложение на flask</label>
+        </div>
+    
+    </form>
+
+
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+
+</body>
+</html>

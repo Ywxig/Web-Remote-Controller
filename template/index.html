@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remout control</title>
+#include ui/ui.css
+</head>
+<body>
+    
+    <button class="openbtn" onclick="openNav()"><b>Меню</b></button>
+
+
+
+    <form action="/index" method="POST" id="main">
+        <button type="submit" value="Hello!!" name="adres">Hello</button>
+        <button type="submit" value="https://www.youtube.com/" name="adres">Ютуб</button>
+        <cut>
+    </form>
+
+#insert template/sadebar.html
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+
+
+</body>
+</html>

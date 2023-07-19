@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card of day</title>
+</head>
+<style>
+:root{
+    --primary-color: rgba(105,55,255,1);
+    --text-color: #fff;
+    --background-color: #36393e;
+    --card-bg: #36393e;
+    --font: Arial, Helvetica, sans-serif;
+    --acttent-text: #0090f0;
+    --hight-light: rgba(106,20,255,0.5);
+    --head-color: #fff;
+    --tool-menu-wight: 10%;
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 1px;
+}
+
+/* РќР° РЅРµР±РѕР»СЊС€РёС… СЌРєСЂР°РЅР°С…, РіРґРµ РІС‹СЃРѕС‚Р° РјРµРЅСЊС€Рµ 450px, РёР·РјРµРЅРёС‚Рµ СЃС‚РёР»СЊ sidenav (РјРµРЅСЊС€Рµ РѕС‚СЃС‚СѓРїРѕРІ Рё РјРµРЅСЊС€РёР№ СЂР°Р·РјРµСЂ С€СЂРёС„С‚Р°) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+
+#include ui/ui.css
+<body>
+
+<div class="widget">
+    hui
+</div>
+    
+<form action="chat" method="POST">
+    <input type="text" name="messsage"><button type="submit">РћС‚РїСЂР°РІРёС‚СЊ</button>
+</form>
+
+
+</body>
+</html>

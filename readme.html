@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+:root{
+    --primary-color: rgba(105,55,255,1);
+    --text-color: #fff;
+    --background-color: #36393e;
+    --card-bg: #36393e;
+    --font: Arial, Helvetica, sans-serif;
+    --acttent-text: #0090f0;
+    --hight-light: rgba(106,20,255,0.5);
+    --head-color: #fff;
+    --tool-menu-wight: 10%;
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font);
+}
+
+.header{
+    background-color: var(--primary-color);
+    padding: 0px 15px 0px 15px;
+    background: linear-gradient(180deg, rgba(54,57,62,1) 0%, rgba(106,0,255,1) 100%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 5px;
+    
+}
+
+.top-menu{
+  left: 0;
+  margin-right: var(--tool-menu-wight);
+  padding-right: (var(--tool-menu-wight)/2);
+}
+
+.menu{
+    background: var(--hight-light);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 20px;
+    
+}
+
+#head{
+  color: var(--head-color);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 1px;
+}
+
+/* РќР° РЅРµР±РѕР»СЊС€РёС… СЌРєСЂР°РЅР°С…, РіРґРµ РІС‹СЃРѕС‚Р° РјРµРЅСЊС€Рµ 450px, РёР·РјРµРЅРёС‚Рµ СЃС‚РёР»СЊ sidenav (РјРµРЅСЊС€Рµ РѕС‚СЃС‚СѓРїРѕРІ Рё РјРµРЅСЊС€РёР№ СЂР°Р·РјРµСЂ С€СЂРёС„С‚Р°) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+h1, h2, h3{
+    color: var(--primary-color);
+}
+
+i{
+    color: var(--acttent-text);
+}
+
+a{
+    font-family: var(--font);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+      
+}
+.project {
+    background-color: var(--card-bg);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+
+.project:hover{
+    background-color: var(--card-bg);
+    box-shadow: 0px 0px 10px var(--hight-light);
+    padding: 20px;
+  }
+
+.project-img {
+  width: 100%;
+  height: auto;
+}
+
+.project-title {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.project-description {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.learn-more {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button {
+  display: block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  
+}
+
+.allow{
+  display: block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  height: 100%;
+}
+
+.button:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.allow:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+a:hover{
+  color: var(--acttent-text);
+  
+}
+
+/* РЎС‚РёР»СЊ РґР»СЏ С„РѕСЂРј */
+form {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+form input[type="text"], form input[type="email"], form select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
+  background-color: var(--dark-color);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.form_radio_btn {
+	display: inline-block;
+	margin-right: 10px;
+}
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+.form_radio_btn label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 34px;
+	border: 1px solid #999;
+	border-radius: 6px;
+	user-select: none;
+}
+ 
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+	background: var(--primary-color);
+}
+ 
+/* Hover */
+.form_radio_btn label:hover {
+	color: #000000;
+}
+
+form input[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.editor {
+  width: 100%;
+  height: 90%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
+  background-color: var(--dark-color);
+  resize: none;
+}
+
+.topik{
+  background-color: #36393e;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.logo{
+  width: 100px;
+}
+.logo-mini{
+  width: 25px;
+}
+.logo-button{
+  height: 50px;
+  padding: 10px 20px;
+  background-color: #00000022;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.page-panel{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+</style>
+
+
+</head>
+<body>
+
+    <h1>
+        Это фаил ReadMe!
+    </h1>
+    
+</body>
+</html>
