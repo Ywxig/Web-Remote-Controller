@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUDE</title>
+<style>
+:root{
+    --primary-color: rgba(105,55,255,1);
+    --text-color: #fff;
+    --background-color: #36393e;
+    --card-bg: #36393e;
+    --font: Arial, Helvetica, sans-serif;
+    --acttent-text: #0090f0;
+    --hight-light: rgba(106,20,255,0.5);
+    --head-color: #fff;
+    --tool-menu-wight: 10%;
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 1px;
+}
+
+/* РќР° РЅРµР±РѕР»СЊС€РёС… СЌРєСЂР°РЅР°С…, РіРґРµ РІС‹СЃРѕС‚Р° РјРµРЅСЊС€Рµ 450px, РёР·РјРµРЅРёС‚Рµ СЃС‚РёР»СЊ sidenav (РјРµРЅСЊС€Рµ РѕС‚СЃС‚СѓРїРѕРІ Рё РјРµРЅСЊС€РёР№ СЂР°Р·РјРµСЂ С€СЂРёС„С‚Р°) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.form_radio_btn {
+	display: inline-block;
+	margin-right: 10px;
+}
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+.form_radio_btn label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 34px;
+	border: 1px solid #999;
+	border-radius: 6px;
+	user-select: none;
+}
+ 
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+	background: var(--primary-color);
+}
+ 
+/* Hover */
+.form_radio_btn label:hover {
+	color: #000000;
+}
+
+.btn-control{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: none;
+}
+
+.mouse{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+}
+
+.mouse-controller{
+  background-color: #36393e;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 5%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+}
+
+.off{
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f00;
+  color: var(--text-color);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+}
+
+.button-pad{
+  background-color: #36393e;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px; 
+}
+</style>
+
+<body>
+
+    <button class="openbtn" onclick="openNav()"><b>Меню</b></button>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="/">Домой</a>
+    <a href="/youtube">Поиск в Ютубе</a>
+    <a href="/element">Добавить кнопку</a>
+    <a href="/keybord">Управление</a>
+</div>
+
+    <div id="main">
+        <form action="/youtube" method="POST">
+            <input type="text" name="reqest"><button type="submit">Найти</button>
+            <br>
+            <input type="text" name="video"><button type="submit">Открыть</button>
+            <br>
+        </form>
+        <form action="/media" method="POST">
+            <button type="submit" value="play" name="media">►</button>
+            <button type="submit" value="full" name="media">◙</button>
+            <button type="submit" value="c" name="media">Суб-титры</button>
+            <button type="submit" value="mute" name="media">Mute</button>
+            <button type="submit" value="next" name="media">Next</button>
+            <button type="submit" value="close" name="media">close</button>
+        </form>
+    </div>
+
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+
+</body>
+</html>

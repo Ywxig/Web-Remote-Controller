@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+#include ui/ui.css
+</head>
+<body>
+ 
+    
+    
+#insert template/sadebar.html
+
+<button class="openbtn" onclick="openNav()"><b>Меню</b></button>
+    <form action="/keybord" method="POST">
+        <div class="button-pad">
+            
+            <button align="right" class="off" type="submit" value="off" name="command">off</button>
+        </div>
+        <div class="mouse-controller" align="center">
+            <div ><button class="mouse" type="submit" name="command" value="mouse-left">Лкм</button><button class="mouse" type="submit" name="command" value="mouse-rght">Пкм</button></div>
+            <table align="center">
+                <tr>
+                    <td></td><td><button type="submit" name="command" value="up" class="btn-control">up</button></td><td></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" name="command" value="left" class="btn-control">Left</button></td><td></td><td><button class="btn-control" type="submit" name="command" value="right">Right</button></td>
+                </tr>
+                <tr>
+                    <td></td><td><button type="submit" name="command" value="down" class="btn-control" >down</button></td><td></td>
+                </tr>
+            </table>
+        </div>
+
+    </form>
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+ 
+    </script>
+
+</body>
+</html>

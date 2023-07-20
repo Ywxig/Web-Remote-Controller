@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+#include ui/ui.css
+
+</head>
+<body>
+
+    <button class="openbtn" onclick="openNav()"><b>Меню</b></button>
+
+#insert template/sadebar.html
+
+    <div class="error-palce">
+        <img width="100%" src="https://media.tenor.com/Pst9ar32XG4AAAAC/devil-may-cry-devil-may-cry3.gif">
+        <div class="textr-error">[ERROR] ОЙ! поймано исключение, проверте выполнели ли вы все действия правельно</div>
+    </div>
+   
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+    
+</body>
+</html>
