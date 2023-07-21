@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, jsonify
 from CMFIO import Compilator, element
 import webbrowser as wb
 from pynput import mouse, keyboard
-
+import time
 
 from youtube import *
 import os
@@ -110,8 +110,8 @@ def media_process():
         return render_template('YouTube.html')
     if media == "next":
         keyboard.press(Key.shift)
-        keyboard.press('N')
-        keyboard.release('N')
+        keyboard.press('n')
+        keyboard.release('n')
         keyboard.release(Key.shift)
         return render_template('YouTube.html')
     if media == "close":
@@ -170,7 +170,26 @@ def keybord_process():
         mouse.press(Button.left)
         mouse.release(Button.left)
         return render_template('keybord.html')
-
+    if system == "skroll-up":
+        mouse.scroll(0, 2)
+        return render_template('keybord.html')
+    if system == "skroll-down":
+        mouse.scroll(0, -2)
+        return render_template('keybord.html')
+    if system == "volume+":
+        from pynput.keyboard import Key, Controller
+        keyboard = Controller() #контроллер клавы
+        keyboard.press(Key.media_volume_up)
+        time.sleep(4)
+        keyboard.release(Key.media_volume_up)
+        return render_template('keybord.html')
+    if system == "volume-":
+        from pynput.keyboard import Key, Controller
+        keyboard = Controller() #контроллер клавы
+        keyboard.press(Key.media_volume_down)
+        time.sleep(4)
+        keyboard.release(Key.media_volume_down)
+        return render_template('keybord.html')   
     else:
         print(system)
         return render_template('keybord.html')
@@ -199,8 +218,8 @@ def media_pad_process():
         return render_template('keybord.html')
     if media == "next":
         keyboard.press(Key.shift)
-        keyboard.press('N')
-        keyboard.release('N')
+        keyboard.press('n')
+        keyboard.release('n')
         keyboard.release(Key.shift)
         return render_template('keybord.html')
     if media == "close":
