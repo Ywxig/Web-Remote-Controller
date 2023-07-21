@@ -6,21 +6,27 @@
     <title>DUDE</title>
 <style>
 :root{
-    --primary-color: rgba(105,55,255,1);
-    --text-color: #fff;
+    --primary-color: #00dc8c;
+    --text-color: #141414;
     --background-color: #36393e;
-    --card-bg: #36393e;
+    --card-bg: #46493e;
     --font: Arial, Helvetica, sans-serif;
-    --acttent-text: #0090f0;
-    --hight-light: rgba(106,20,255,0.5);
-    --head-color: #fff;
-    --tool-menu-wight: 10%;
+    --acttent-text: #28a08c;
+    --hight-light: #28a08cff;
+    --head-color: #141414;
 }
 
 body{
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: var(--font);
+}
+
+li{
+  color: #00dc8c;
+  line-height: 1.5;
+  list-style-type: disc;
+  font-size: 16px;
 }
 
 .sidebar {
@@ -65,6 +71,7 @@ body{
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .openbtn:hover {
@@ -110,9 +117,21 @@ body{
 }
 
 .btn-control{
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
   background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn-control:hover{
+  font-size: 30px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
   color: var(--text-color);
   width: 100px;
   height: 100px;
@@ -126,8 +145,23 @@ body{
   background-color: var(--primary-color);
   color: var(--text-color);
   width: 150px;
+  height: 50px;
   border-radius: 10px;
   border: none;
+  margin: 5px;
+}
+
+.mouse:hover{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  color: var(--text-color);
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
 }
 
 .mouse-controller{
@@ -139,14 +173,31 @@ body{
   border-radius: 10px;
 }
 
+.err-title{
+  font-size: 34px;
+  color: var(--primary-color);
+}
+
+.err-text{
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.err-img{
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000;
+  margin-top: 10px;
+}
+
 .off{
   font-size: 20px;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   background-color: #f00;
   color: var(--text-color);
-  width: 35px;
-  height: 35px;
+  width: 42px;
+  height: 40px;
   border-radius: 50%;
   border: none;
 }
@@ -155,9 +206,109 @@ body{
   background-color: #36393e;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin: 5%;
+  padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 10px; 
+}
+
+.media-button{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+}
+
+.media-button:hover{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  color: var(--text-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+}
+
+.media-pad{
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 5%;
+  margin-top: 15px;
+  border-radius: 10px; 
+}
+
+.ico{
+  width: 30px;
+  height: 30px;
+}
+
+.label{
+  width: 50px;
+}
+
+/* РЎС‚РёР»СЊ РґР»СЏ С„РѕСЂРј */
+form {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+form label {
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+form input[type="text"], form input[type="email"], form select {
+  width: 80%;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
+  background-color: var(--dark-color);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+button {
+  font-size: 24px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  
+}
+
+button:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 </style>
 
@@ -167,26 +318,28 @@ body{
 
 <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="/">Домой</a>
-    <a href="/youtube">Поиск в Ютубе</a>
+    <a href="/">Главная</a>
+    <a href="/youtube">Панель Ютуба</a>
+    <a href="/keybord">Упровление</a>
     <a href="/element">Добавить кнопку</a>
-    <a href="/keybord">Управление</a>
 </div>
 
     <div id="main">
-        <form action="/youtube" method="POST">
-            <input type="text" name="reqest"><button type="submit">Найти</button>
-            <br>
-            <input type="text" name="video"><button type="submit">Открыть</button>
-            <br>
+        <form align="center" action="/youtube" method="POST">
+            <div class="button-pad">
+                <input type="text" name="reqest"><button type="submit">Найти</button>
+            </div>
+            <div class="button-pad">
+                <input type="text" name="video"><button type="submit">Открыть</button>
+            </div>
         </form>
-        <form action="/media" method="POST">
-            <button type="submit" value="play" name="media">►</button>
-            <button type="submit" value="full" name="media">◙</button>
-            <button type="submit" value="c" name="media">Суб-титры</button>
-            <button type="submit" value="mute" name="media">Mute</button>
-            <button type="submit" value="next" name="media">Next</button>
-            <button type="submit" value="close" name="media">close</button>
+        <form align="center" action="/media" method="POST">
+            <button type="submit" value="play" name="media" class="media-button"><img class="ico" src="https://img.freepik.com/free-icon/play-button_318-160304.jpg" alt=""></button>
+            <button type="submit" value="full" name="media" class="media-button"> <img class="ico" src="https://cdn-icons-png.flaticon.com/512/60/60694.png" alt=""></button>
+            <button type="submit" value="c" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/834/834862.png" alt=""></button>
+            <button type="submit" value="mute" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/727/727240.png" alt=""></button>
+            <button type="submit" value="next" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/0/304.png" alt=""></button>
+            <button type="submit" value="close" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/112/112692.png" alt=""></button>
         </form>
     </div>
 

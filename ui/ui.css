@@ -1,19 +1,25 @@
 :root{
-    --primary-color: rgba(105,55,255,1);
-    --text-color: #fff;
+    --primary-color: #00dc8c;
+    --text-color: #141414;
     --background-color: #36393e;
-    --card-bg: #36393e;
+    --card-bg: #46493e;
     --font: Arial, Helvetica, sans-serif;
-    --acttent-text: #0090f0;
-    --hight-light: rgba(106,20,255,0.5);
-    --head-color: #fff;
-    --tool-menu-wight: 10%;
+    --acttent-text: #28a08c;
+    --hight-light: #28a08cff;
+    --head-color: #141414;
 }
 
 body{
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: var(--font);
+}
+
+li{
+  color: #00dc8c;
+  line-height: 1.5;
+  list-style-type: disc;
+  font-size: 16px;
 }
 
 .sidebar {
@@ -58,6 +64,7 @@ body{
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .openbtn:hover {
@@ -103,9 +110,21 @@ body{
 }
 
 .btn-control{
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
   background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn-control:hover{
+  font-size: 30px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
   color: var(--text-color);
   width: 100px;
   height: 100px;
@@ -119,8 +138,23 @@ body{
   background-color: var(--primary-color);
   color: var(--text-color);
   width: 150px;
+  height: 50px;
   border-radius: 10px;
   border: none;
+  margin: 5px;
+}
+
+.mouse:hover{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  color: var(--text-color);
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
 }
 
 .mouse-controller{
@@ -132,14 +166,31 @@ body{
   border-radius: 10px;
 }
 
+.err-title{
+  font-size: 34px;
+  color: var(--primary-color);
+}
+
+.err-text{
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.err-img{
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000;
+  margin-top: 10px;
+}
+
 .off{
   font-size: 20px;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   background-color: #f00;
   color: var(--text-color);
-  width: 35px;
-  height: 35px;
+  width: 42px;
+  height: 40px;
   border-radius: 50%;
   border: none;
 }
@@ -148,7 +199,107 @@ body{
   background-color: #36393e;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin: 5%;
+  padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 10px; 
+}
+
+.media-button{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+}
+
+.media-button:hover{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  color: var(--text-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+}
+
+.media-pad{
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 5%;
+  margin-top: 15px;
+  border-radius: 10px; 
+}
+
+.ico{
+  width: 30px;
+  height: 30px;
+}
+
+.label{
+  width: 50px;
+}
+
+/* Стиль для форм */
+form {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+form label {
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+form input[type="text"], form input[type="email"], form select {
+  width: 80%;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
+  background-color: var(--dark-color);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+button {
+  font-size: 24px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  
+}
+
+button:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }

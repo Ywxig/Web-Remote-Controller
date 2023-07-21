@@ -52,6 +52,28 @@ def youtube_process():
     else:
         return render_template('error.html')
 
+@app.route('/search', methods=['POST'])
+def yandex_process():
+    
+    search = request.form['search']
+    comm = request.form['command']
+
+    if comm == "close":
+        from pynput.keyboard import Key, Controller
+        keyboard = Controller() #контроллер миши 
+        keyboard.press(Key.alt)
+        keyboard.press(Key.f4)
+        keyboard.release(Key.f4)
+        keyboard.release(Key.alt)
+        return render_template('index.html')
+        
+    if search != "" and comm == "search":
+        wb.open('https://yandex.ru/search/?text=' + format(search))
+        return render_template('index.html')
+    
+    else:
+        return render_template('error.html')
+
 @app.route('/media', methods=['POST'])
 def media_process():
 
@@ -63,16 +85,16 @@ def media_process():
         keyboard.release(Key.space)
         return render_template('YouTube.html')
     if media == "full":
-        keyboard.press('F')
-        keyboard.release('F')
+        keyboard.press('f')
+        keyboard.release('f')
         return render_template('YouTube.html')
     if media == "c":
-        keyboard.press('C')
-        keyboard.release('C')
+        keyboard.press('c')
+        keyboard.release('c')
         return render_template('YouTube.html')
     if media == "mute":
-        keyboard.press('M')
-        keyboard.release('M')
+        keyboard.press('m')
+        keyboard.release('m')
         return render_template('YouTube.html')
     if media == "next":
         keyboard.press(Key.shift)
@@ -136,10 +158,47 @@ def keybord_process():
         mouse.press(Button.left)
         mouse.release(Button.left)
         return render_template('keybord.html')
+
     else:
         print(system)
         return render_template('keybord.html')
 
+@app.route('/media-pad', methods=['POST'])
+def media_pad_process():
+
+    media = request.form['media']
+    from pynput.keyboard import Key, Controller
+    keyboard = Controller() #контроллер клавы
+    if media == "play":
+        keyboard.press(Key.space)
+        keyboard.release(Key.space)
+        return render_template('keybord.html')
+    if media == "full":
+        keyboard.press('f')
+        keyboard.release('f')
+        return render_template('keybord.html')
+    if media == "c":
+        keyboard.press('c')
+        keyboard.release('c')
+        return render_template('keybord.html')
+    if media == "mute":
+        keyboard.press('m')
+        keyboard.release('m')
+        return render_template('keybord.html')
+    if media == "next":
+        keyboard.press(Key.shift)
+        keyboard.press('N')
+        keyboard.release('N')
+        keyboard.release(Key.shift)
+        return render_template('keybord.html')
+    if media == "close":
+        keyboard.press(Key.alt)
+        keyboard.press(Key.f4)
+        keyboard.release(Key.f4)
+        keyboard.release(Key.alt)
+        return render_template('keybord.html')   
+    else:
+        return render_template('error.html')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8080)

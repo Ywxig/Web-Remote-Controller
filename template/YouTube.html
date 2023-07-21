@@ -13,19 +13,21 @@
 #insert template/sadebar.html
 
     <div id="main">
-        <form action="/youtube" method="POST">
-            <input type="text" name="reqest"><button type="submit">Найти</button>
-            <br>
-            <input type="text" name="video"><button type="submit">Открыть</button>
-            <br>
+        <form align="center" action="/youtube" method="POST">
+            <div class="button-pad">
+                <input type="text" name="reqest"><button type="submit">Найти</button>
+            </div>
+            <div class="button-pad">
+                <input type="text" name="video"><button type="submit">Открыть</button>
+            </div>
         </form>
-        <form action="/media" method="POST">
-            <button type="submit" value="play" name="media">►</button>
-            <button type="submit" value="full" name="media">◙</button>
-            <button type="submit" value="c" name="media">Суб-титры</button>
-            <button type="submit" value="mute" name="media">Mute</button>
-            <button type="submit" value="next" name="media">Next</button>
-            <button type="submit" value="close" name="media">close</button>
+        <form align="center" action="/media" method="POST">
+            <button type="submit" value="play" name="media" class="media-button"><img class="ico" src="https://img.freepik.com/free-icon/play-button_318-160304.jpg" alt=""></button>
+            <button type="submit" value="full" name="media" class="media-button"> <img class="ico" src="https://cdn-icons-png.flaticon.com/512/60/60694.png" alt=""></button>
+            <button type="submit" value="c" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/834/834862.png" alt=""></button>
+            <button type="submit" value="mute" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/727/727240.png" alt=""></button>
+            <button type="submit" value="next" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/0/304.png" alt=""></button>
+            <button type="submit" value="close" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/112/112692.png" alt=""></button>
         </form>
     </div>
 

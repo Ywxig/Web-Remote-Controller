@@ -13,27 +13,37 @@
 #insert template/sadebar.html
 
 <button class="openbtn" onclick="openNav()"><b>Меню</b></button>
+
     <form action="/keybord" method="POST">
         <div class="button-pad">
             
-            <button align="right" class="off" type="submit" value="off" name="command">off</button>
+            <button class="off" type="submit" value="off" name="command"><img align="center" class="ico" src="https://cdn4.iconfinder.com/data/icons/interface-essential-vol-6/24/power-button--power-button-on-off-512.png" alt=""></button>
         </div>
         <div class="mouse-controller" align="center">
-            <div ><button class="mouse" type="submit" name="command" value="mouse-left">Лкм</button><button class="mouse" type="submit" name="command" value="mouse-rght">Пкм</button></div>
+            <div><button class="mouse" type="submit" name="command" value="mouse-left">Лкм</button><button class="mouse" type="submit" name="command" value="mouse-right">Пкм</button></div>
             <table align="center">
                 <tr>
-                    <td></td><td><button type="submit" name="command" value="up" class="btn-control">up</button></td><td></td>
+                    <td></td><td><button type="submit" name="command" value="up" class="btn-control">↑</button></td><td></td>
                 </tr>
                 <tr>
-                    <td><button type="submit" name="command" value="left" class="btn-control">Left</button></td><td></td><td><button class="btn-control" type="submit" name="command" value="right">Right</button></td>
+                    <td><button type="submit" name="command" value="left" class="btn-control">←</button></td><td></td><td><button class="btn-control" type="submit" name="command" value="right">→</button></td>
                 </tr>
                 <tr>
-                    <td></td><td><button type="submit" name="command" value="down" class="btn-control" >down</button></td><td></td>
+                    <td></td><td><button type="submit" name="command" value="down" class="btn-control" >↓</button></td><td></td>
                 </tr>
             </table>
         </div>
-
     </form>
+    <div align="center">
+        <form class="media-pad" action="/media-pad" method="POST">
+            <button type="submit" value="play" name="media" class="media-button"><img class="ico" src="https://img.freepik.com/free-icon/play-button_318-160304.jpg" alt=""></button>
+            <button type="submit" value="full" name="media" class="media-button"> <img class="ico" src="https://cdn-icons-png.flaticon.com/512/60/60694.png" alt=""></button>
+            <button type="submit" value="c" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/834/834862.png" alt=""></button>
+            <button type="submit" value="mute" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/727/727240.png" alt=""></button>
+            <button type="submit" value="next" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/0/304.png" alt=""></button>
+            <button type="submit" value="close" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/112/112692.png" alt=""></button>
+        </form>
+    </div>
 
     <script>
         function openNav() {
