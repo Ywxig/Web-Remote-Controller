@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, jsonify
-import CMFIO
+from CMFIO import Compilator, element
 import webbrowser as wb
 from pynput import mouse, keyboard
 
@@ -7,17 +7,14 @@ from pynput import mouse, keyboard
 from youtube import *
 import os
 
-
-
-
 app = Flask(__name__)
 
 # сборка всех шаблонав по средствам сборщика html файлов
-CMFIO.Compilator.build("index.html")
-CMFIO.Compilator.build("YouTube.html")
-CMFIO.Compilator.build("error.html")
-CMFIO.Compilator.build("add_element.html")
-CMFIO.Compilator.build("keybord.html")
+Compilator.build("index.html")
+Compilator.build("YouTube.html")
+Compilator.build("error.html")
+Compilator.build("add_element.html")
+Compilator.build("keybord.html")
 
 @app.route('/')
 def index():  
@@ -122,7 +119,7 @@ def add_element_process():
     if text == "" or url == "":
         return render_template('error.html')
     else:
-        return CMFIO.element('<button type="submit" value="' + url + '" name="adres">'+ text +'</button>\n<cut>')
+        return element('<button type="submit" value="' + url + '" name="adres">'+ text +'</button>\n<cut>')
 
 @app.route('/keybord')
 def keybord():  
