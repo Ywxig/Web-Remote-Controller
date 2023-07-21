@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Упровление</title>
 <style>
 :root{
     --primary-color: #00dc8c;
@@ -242,6 +242,7 @@ li{
   margin-top: 15px;
   margin-bottom: 5px;
   border-radius: 10px; 
+  line-height: 2;
 }
 
 .ico{
@@ -304,12 +305,22 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  
+  margin-bottom: 2px;
 }
 
 button:hover {
   background-color: var(--dark-color);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.volume-button {
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 2px;
 }
 </style>
 
@@ -331,6 +342,10 @@ button:hover {
         <div class="button-pad">
             
             <button class="off" type="submit" value="off" name="command"><img align="center" class="ico" src="https://cdn4.iconfinder.com/data/icons/interface-essential-vol-6/24/power-button--power-button-on-off-512.png" alt=""></button>
+            <button class="volume-button" type="submit" name="command" value="skroll-up">Скрол↑</button>
+            <button class="volume-button" type="submit" name="command" value="skroll-down">Скрол↓</button>
+            <button class="volume-button" type="submit" name="command" value="volume+">Звук+</button>
+            <button class="volume-button" type="submit" name="command" value="volume-">Звук-</button>
         </div>
         <div class="mouse-controller" align="center">
             <div><button class="mouse" type="submit" name="command" value="mouse-left">Лкм</button><button class="mouse" type="submit" name="command" value="mouse-right">Пкм</button></div>
