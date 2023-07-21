@@ -70,6 +70,21 @@ def yandex_process():
     
     else:
         return render_template('error.html')
+    
+@app.route('/input-key', methods=['POST'])
+def input_process():
+    from pynput.keyboard import Key, Controller
+    keyboard = Controller()
+    text = request.form['text']
+    insert = request.form['insert']
+
+
+    if text != "" and insert == "true":
+        keyboard.type(text)
+        return render_template('keybord.html')
+    
+    else:
+        return render_template('error.html')
 
 @app.route('/media', methods=['POST'])
 def media_process():
