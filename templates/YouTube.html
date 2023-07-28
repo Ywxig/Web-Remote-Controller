@@ -14,8 +14,9 @@
     --acttent-text: #28a08c;
     --hight-light: #28a08cff;
     --head-color: #141414;
+    --input-text-color: #ebebeb;
 }
-
+/*cut*/
 body{
     background-color: var(--background-color);
     color: var(--text-color);
@@ -121,9 +122,8 @@ li{
   cursor: pointer;
   background-color: var(--primary-color);
   color: var(--text-color);
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
+  width: 80px;
+  height: 80px;
   border: none;
 }
 
@@ -133,9 +133,8 @@ li{
   background-color: var(--background-color);
   box-shadow: 0px 0px 10px var(--hight-light);
   color: var(--text-color);
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
+  width: 80px;
+  height: 80px;
   border: none;
 }
 
@@ -145,9 +144,7 @@ li{
   background-color: var(--primary-color);
   color: var(--text-color);
   width: 150px;
-  height: 50px;
-  border-radius: 10px;
-  border: none;
+  height: 45px;
   margin: 5px;
 }
 
@@ -158,9 +155,7 @@ li{
   box-shadow: 0px 0px 10px var(--hight-light);
   color: var(--text-color);
   width: 150px;
-  height: 50px;
-  border-radius: 10px;
-  border: none;
+  height: 45px;
   margin: 5px;
 }
 
@@ -196,6 +191,7 @@ li{
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   background-color: #f00;
   color: var(--text-color);
+  margin-right: 15px;
   width: 42px;
   height: 40px;
   border-radius: 50%;
@@ -203,7 +199,7 @@ li{
 }
 
 .button-pad{
-  background-color: #36393e;
+  background-color: var(--background-color);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin: 5%;
   padding: 10px;
@@ -270,11 +266,11 @@ form label {
 form input[type="text"], form input[type="email"], form select {
   width: 80%;
   border-radius: 4px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font);
   font-size: 18px;
   padding: 10px;
   border: 1px solid var(--primary-color);
-  color: var(--text-color);
+  color: var(--input-text-color);
   background-color: var(--dark-color);
   font-size: 16px;
   margin-bottom: 20px;
@@ -286,7 +282,7 @@ form input[type="submit"] {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  color: #fff;
+  color: var(--input-text-color);
   background-color: var(--primary-color);
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
@@ -322,6 +318,106 @@ button:hover {
   border-radius: 10px;
   margin-bottom: 2px;
 }
+
+.scroll-button {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
+}
+
+.scroll-button:hover {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  color: var(--text-color);
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
+}
+
+.gamma-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+    
+}
+.gamma {
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.gamma:hover{
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  padding: 20px;
+}
+
+.gamma-img {
+width: 100%;
+height: auto;
+}
+
+.gamma-title {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.gamma-description {
+margin-top: 0;
+margin-bottom: 10px;
+}
+
+.set {
+display: block;
+margin-top: 10px;
+padding: 10px 20px;
+background-color: #000;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.log{
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.succes{
+  background-color: #00dc8c;
+  padding-left: 10px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.error{
+  background-color: rgb(205, 40, 40);
+  padding-left: 10px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+p{padding-left: 20px;}
+
+.dev{
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+}
 </style>
 
 <body>
@@ -334,6 +430,13 @@ button:hover {
     <a href="/youtube">Панель Ютуба</a>
     <a href="/keybord">Упровление</a>
     <a href="/element">Добавить кнопку</a>
+    <a href="/root">Настройки</a>
+    <a href="/logs">Журнал отладки</a>
+
+
+
+
+    <a href="https://github.com/Ywxig"><img class="dev" width="50px" height="50px" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"></a>
 </div>
 
     <div id="main">

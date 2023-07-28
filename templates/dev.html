@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test-page</title>
+<style>
 :root{
     --primary-color: #00dc8c;
     --text-color: #141414;
@@ -77,7 +84,7 @@ li{
   padding: 1px;
 }
 
-/* На небольших экранах, где высота меньше 450px, измените стиль sidenav (меньше отступов и меньший размер шрифта) */
+/* РќР° РЅРµР±РѕР»СЊС€РёС… СЌРєСЂР°РЅР°С…, РіРґРµ РІС‹СЃРѕС‚Р° РјРµРЅСЊС€Рµ 450px, РёР·РјРµРЅРёС‚Рµ СЃС‚РёР»СЊ sidenav (РјРµРЅСЊС€Рµ РѕС‚СЃС‚СѓРїРѕРІ Рё РјРµРЅСЊС€РёР№ СЂР°Р·РјРµСЂ С€СЂРёС„С‚Р°) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
@@ -243,7 +250,7 @@ li{
   width: 50px;
 }
 
-/* Стиль для форм */
+/* РЎС‚РёР»СЊ РґР»СЏ С„РѕСЂРј */
 form {
   margin: 0 auto;
   max-width: 400px;
@@ -411,3 +418,50 @@ p{padding-left: 20px;}
   width: 50px;
   height: 50px;
 }
+</style>
+
+<body>
+
+    <button class="openbtn" onclick="openNav()"><b>Меню</b></button>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="/">Главная</a>
+    <a href="/youtube">Панель Ютуба</a>
+    <a href="/keybord">Упровление</a>
+    <a href="/element">Добавить кнопку</a>
+    <a href="/root">Настройки</a>
+    <a href="/logs">Журнал отладки</a>
+
+
+
+
+    <a href="https://github.com/Ywxig"><img class="dev" width="50px" height="50px" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"></a>
+</div>
+
+    <form method="POST" id="main">
+        <button type="submit" name="adres">Кнопка</button>
+        <cut>
+    </form>
+
+    <form class="button-pad" action="/search" method="POST">
+        <input type="text" name="search" value="Ввод текста...">
+        <button type="submit" name="command" value="search">Найти</button>
+        <button type="submit" name="command" value="close" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/112/112692.png" alt=""></button>
+
+    </form>
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+
+</body>
+</html>

@@ -9,6 +9,26 @@ def element(element):
     ctx = open("template/index.html", "r", encoding="utf-8").read().split("<cut>")
     open("template/index.html", "w", encoding="utf-8").write(ctx[0] + element + ctx[1])
 
+class loger():
+
+    def send(status="succes", title="some log", description="simple log", log_form="template/log.html", log_jurnal="template/logs.html"):
+        log_file = []
+        file = open(log_form, "r", encoding="utf-8").read().split("<log>")
+        log_script = file[1].split("</log>")
+        ctx = log_script[0].split()
+        if "!title" in ctx:
+            log_file.append('<h1 class="' + status + '">'+ title + "</h1>")
+        if  "!description" in ctx:
+            log_file.append('<p>'+ description + "</p>")
+        log = file[0] + "\n".join(log_file) + log_script[1] + "<cut>"
+        f = open(log_jurnal, "r", encoding="utf-8").read().split("<cut>")
+        try:
+            open(log_jurnal, "w", encoding="utf-8").write(f[0] + log + f[1])
+        except:
+            pass
+
+
+
 class Parsers():
 
 
@@ -176,7 +196,7 @@ class Compilator:
 
                     name_file = word[1].split(".")
                     if name_file[1] == "css":
-                        print("ok")
+                        
                         fin.append("<style>\n" + open(word[1], "r").read() + "\n" + "</style>\n")
                         del Text[count]
 
@@ -203,7 +223,6 @@ class Compilator:
                     del fin[fin.index(i)]
         except:
             pass
-
         open("templates/" + file, "w", encoding="utf-8").write("\n".join(fin))
             
     
