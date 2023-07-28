@@ -3,30 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная</title>
+    <title>test-page</title>
 #include ui/ui.css
 </head>
 <body>
-    
+
     <button class="openbtn" onclick="openNav()"><b>Меню</b></button>
 
+#insert template/sadebar.html
 
-
-    <form action="/index" method="POST" id="main">
-        <button type="submit" value="https://www.youtube.com/" name="adres">YouTube.com</button>
+    <form method="POST" id="main">
+        <button type="submit" name="adres">Кнопка</button>
         <cut>
     </form>
 
     <form class="button-pad" action="/search" method="POST">
-        <img width="50%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Yandex_Logo.svg/2560px-Yandex_Logo.svg.png" alt="">
-        <input type="text" name="search">
+        <input type="text" name="search" value="Ввод текста...">
         <button type="submit" name="command" value="search">Найти</button>
         <button type="submit" name="command" value="close" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/112/112692.png" alt=""></button>
 
     </form>
-
-
-#insert template/sadebar.html
 
     <script>
         function openNav() {
@@ -39,7 +35,6 @@
           document.getElementById("main").style.marginLeft= "0";
         }
     </script>
-
 
 </body>
 </html>
