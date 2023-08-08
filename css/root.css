@@ -1,0 +1,23 @@
+:root{
+    --primary-color: #00dc8c;
+    --text-color: #141414;
+    --background-color: #36393e;
+    --card-bg: #46493e;
+    --font: Arial, Helvetica, sans-serif;
+    --acttent-text: #28a08c;
+    --hight-light: #28a08cff;
+    --head-color: #141414;
+    --input-text-color: #ebebeb;
+    --margin: 2%;
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font);
+}
+
+.dev{
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,29 @@
+p{
+    font-size: 20px;
+    color: var(--input-text-color);
+    border-left: 3px var(--primary-color) solid;
+    padding: 20px;
+}
+
+h1, h2, h3{
+    font-size: 26px;
+    color: var(--input-text-color);
+}
+
+i{
+    font-size: 26px;
+    color: var(--primary-color);
+}
+
+ul{
+    padding: 20px;
+}
+
+li{
+    font-size: 20px;
+    color: var(--input-text-color); 
+}
+
+b{
+    font-size: 26px;
+}

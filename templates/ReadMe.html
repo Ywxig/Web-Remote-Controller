@@ -258,48 +258,34 @@ button:hover {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
-/* Стиль для форм */
-form {
-  margin: 0 auto;
-  max-width: 400px;
+p{
+    font-size: 20px;
+    color: var(--input-text-color);
+    border-left: 3px var(--primary-color) solid;
+    padding: 20px;
 }
 
-form label {
-  margin-bottom: 10px;
-  color: var(--text-color);
-  font-weight: bold;
-  font-size: 16px;
+h1, h2, h3{
+    font-size: 26px;
+    color: var(--input-text-color);
 }
 
-form input[type="text"], form input[type="email"], form select {
-  width: 80%;
-  border-radius: 4px;
-  font-family: var(--font);
-  font-size: 18px;
-  padding: 10px;
-  border: 1px solid var(--primary-color);
-  color: var(--input-text-color);
-  background-color: var(--dark-color);
-  font-size: 16px;
-  margin-bottom: 20px;
+i{
+    font-size: 26px;
+    color: var(--primary-color);
 }
 
-form input[type="submit"] {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  color: var(--input-text-color);
-  background-color: var(--primary-color);
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+ul{
+    padding: 20px;
 }
 
-form input[type="submit"]:hover {
-  background-color: var(--dark-color);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+li{
+    font-size: 20px;
+    color: var(--input-text-color); 
+}
+
+b{
+    font-size: 26px;
 }
 </style>
 <button class="openbtn" onclick="openNav()"><b>Меню</b></button>
@@ -313,54 +299,24 @@ form input[type="submit"]:hover {
 
     <a href="https://github.com/Ywxig"><img align="left" class="dev" width="50px" height="50px" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"></a>
 </div>
-<form action="/COMMAND-index" method="POST">
-<div class="button-place">      
-    <button class="off" type="submit" value="off" name="command"><img align="center" class="ico" src="https://cdn4.iconfinder.com/data/icons/interface-essential-vol-6/24/power-button--power-button-on-off-512.png" alt=""></button>
+<h1>Немного об мне</h1>
+<p>
+    Я веб-приложение на Flask для удалённого управления ПК на windows. Я могу помочь совершать сёрфинг в интернете, легко и просто включать и выключать видео на устройстве.
+</p>
 
-    <button class="volume-button" type="submit" name="command" value="volume+">Звук+</button>
-    <button class="volume-button" type="submit" name="command" value="volume-">Звук-</button>
-</div>
-</form>
-<form action="/CONTROLL-index" method="POST">
-<div class="mouse-controller" align="center">
-    <div><button class="mouse" type="submit" name="command" value="mouse-left">Лкм</button><button class="mouse" type="submit" name="command" value="mouse-right">Пкм</button></div>
-    <table align="center">
-        <tr>
-            <td></td><td><button type="submit" name="command" value="up" class="btn-control">↑</button></td><td></td>
-        </tr>
-        <tr>
-            <td><button type="submit" name="command" value="left" class="btn-control">←</button></td><td></td><td><button class="btn-control" type="submit" name="command" value="right">→</button></td>
-        </tr>
-        <tr>
-            <td></td><td><button type="submit" name="command" value="down" class="btn-control" >↓</button></td><td></td>
-        </tr>
-    </table>
-</div>
-</form>
-<form action="/SCROLLING-index" method="POST">
-<div class="button-place">
-    <button class="scroll-button" type="submit" name="command" value="skroll-up">Скрол↑</button>
-    <button class="scroll-button" type="submit" name="command" value="skroll-down">Скрол↓</button>
-</div>
-</form>
-<form action="/MEDIA-index" method="POST">
-<div class="button-place">
-    <button type="submit" value="play" name="media" class="media-button"><img class="ico" src="https://img.freepik.com/free-icon/play-button_318-160304.jpg" alt=""></button>
-    <button type="submit" value="full" name="media" class="media-button"> <img class="ico" src="https://cdn-icons-png.flaticon.com/512/60/60694.png" alt=""></button>
-    <button type="submit" value="c" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/834/834862.png" alt=""></button>
-    <button type="submit" value="mute" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/727/727240.png" alt=""></button>
-    <button type="submit" value="next" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/0/304.png" alt=""></button>
-    <button type="submit" value="close" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/112/112692.png" alt=""></button>
-</div>
-</form>
-<form action="/VIDEO-index" method="POST">
-<div class="button-place">
-    <input type="text" name="reqest">
-    <button type="submit" name="flag" value="search">Найти</button> <button name="flag" type="submit" value="open">Открыть</button> <button name="flag" type="submit" value="write">Нписать</button>
-</div>
+<p>
+    Во сановном можете использовать для быстрого включения видео на ютубе. Мой интерфейс нацелен на удобство и простату. Также я собираю некоторые данные, такие как:
+</p>
 
+<ul>
+    <li>Читаю ваши запросы для организации ленты устройства. Благодаря этому вы сможете выбирать видео, которые я найду на просторе ютуба</li>
+    <li>Я знаю о перемещении мышь. Я запоминаю движение мыши по экрану устройства, это необходимо для вашего опыта использование</li>
+</ul>
 
-</form>
+<p>
+Пожалуйста, если вам понравился Web-Remote-Controller, то посетите GitHub разработчика, он закреплён в меню
+❤❤❤
+</p>
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
