@@ -1,0 +1,5 @@
+str::DIR::template/
+list::BP-FILE::index.csbp,video.csbp,options.csbp,doc.csbp
+list::SIZE::1400,800
+int::FORCE::50
+list::REQESTS::пугод, хауди хо, маиншилд, хайди

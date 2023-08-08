@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+
+<style>
+:root{
+    --primary-color: #00dc8c;
+    --text-color: #141414;
+    --background-color: #36393e;
+    --card-bg: #46493e;
+    --font: Arial, Helvetica, sans-serif;
+    --acttent-text: #28a08c;
+    --hight-light: #28a08cff;
+    --head-color: #141414;
+    --input-text-color: #ebebeb;
+    --margin: 2%;
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font);
+}
+
+.dev{
+    width: 50px;
+    height: 50px;
+}
+.btn-control{
+  font-size: 30px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 80px;
+  height: 80px;
+  border: none;
+}
+
+.btn-control:hover{
+  font-size: 30px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  color: var(--text-color);
+  width: 80px;
+  height: 80px;
+  border: none;
+}
+
+.mouse{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 150px;
+  height: 45px;
+  margin: 5px;
+}
+
+.mouse:hover{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  color: var(--text-color);
+  width: 150px;
+  height: 45px;
+  margin: 5px;
+}
+
+.mouse-controller{
+  background-color: #36393e;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 2%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+}
+
+button {
+  font-size: 24px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 2px;
+}
+
+button:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.button-place{
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 2%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px; 
+}
+
+
+.volume-button {
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 2px;
+}
+
+.scroll-button {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
+}
+
+.scroll-button:hover {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  color: var(--text-color);
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
+}
+
+.media-button{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+}
+
+.media-button:hover{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  color: var(--text-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+}
+
+.media-place{
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 5%;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border-radius: 10px; 
+  line-height: 2;
+}
+
+.off{
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f00;
+  color: var(--text-color);
+  margin-right: 15px;
+  width: 42px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+}
+
+.ico{
+  width: 30px;
+  height: 30px;
+}
+
+.label{
+  width: 50px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 1px;
+}
+
+/* На небольших экранах, где высота меньше 450px, измените стиль sidenav (меньше отступов и меньший размер шрифта) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+/* Стиль для форм */
+form {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+form label {
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+form input[type="text"], form input[type="email"], form select {
+  width: 80%;
+  border-radius: 4px;
+  font-family: var(--font);
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  color: var(--input-text-color);
+  background-color: var(--dark-color);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--input-text-color);
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.videos{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;  
+  }
+
+h1{
+    font-size: 26px;
+    color: var(--input-text-color);
+}
+
+img{
+    width: 100%;
+    border-radius: 10px; 
+}
+
+.show{
+  font-size: 24px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 2px;
+}
+
+.show:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+button {
+  font-size: 24px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 2px;
+}
+
+button:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.video{
+    background-color: var(--background-color);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: 2%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px; 
+  }
+</style>
+<button class="openbtn" onclick="openNav()"><b>Меню</b></button>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="/">Главная</a>
+    <a href="/Video">Лента Ютуба</a>
+    <a href="/Options">Настройки</a>
+    <a href="/ReadMe">О мне</a>
+
+    <a href="https://github.com/Ywxig"><img align="left" class="dev" width="50px" height="50px" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"></a>
+</div>
+<form action="/VIDEO-video" method="POST">
+<div class="button-place">
+    <h1>Лента из <i>ваших</i> запросов</h1>
+</div>
+
+<div class="videos">
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=KZRd039R4WE"><img class="project-img" src="https://i.ytimg.com/vi/KZRd039R4WE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBoeQNmlyjArUeo4SNOa9x8CSAegQ"></a>
+<h1>ПУГОД СМОТРИТ ПОСТРОЙКИ НА 41 ЭКСПЕРИМЕНТЕ | пугод нарезки</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=KZRd039R4WE" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=FUJvQlRG5Ng"><img class="project-img" src="https://i.ytimg.com/vi/FUJvQlRG5Ng/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCALTq6cSGbrlpyqQLoWQBkvc_bvA"></a>
+<h1>Реакция Пугода на НОВЫЕ ЗАПРЕТЫ ОТ MICROSOFT / Изменение Eula Minecraft / PWGood нарезки</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=FUJvQlRG5Ng" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=Xo5u9fkpDGQ"><img class="project-img" src="https://i.ytimg.com/vi/Xo5u9fkpDGQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAh-hw9s-pBnbzOSDfbPQOnPdblpQ"></a>
+<h1>ПУГОД СМОТРИТ: MrBeast - 7 Дней в Открытом Море | пугод нарезки</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=Xo5u9fkpDGQ" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=9b9rgMrJt_8"><img class="project-img" src="https://i.ytimg.com/vi/9b9rgMrJt_8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCcE-I4dICcOaQqpTYYgNjCfrSP4g"></a>
+<h1>ПОСТРОИЛ РАБОЧИЙ ПОЕЗД БЕЗ МОДОВ, ВЫЖИВАЯ НА СВАЛКЕ | Эксперимент 41</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=9b9rgMrJt_8" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=NsA-DLG1VTs"><img class="project-img" src="https://i.ytimg.com/vi/NsA-DLG1VTs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDquWrTMiAZoR5__ZI4gkFJzq-DGA"></a>
+<h1>ТРАЧУ ЛУЧШИЕ ГОДЫ НА МАЙНКРАФТ | PepeLand 7 Серия 10 [500К]</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=NsA-DLG1VTs" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=tihq_bLfk08"><img class="project-img" src="https://i.ytimg.com/vi/tihq_bLfk08/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJuY5WH_dCgbgKDeiE-BAjjomx7Q"></a>
+<h1>Твоя ПЕРВАЯ НЕЙРОСЕТЬ на Python с нуля! | За 10 минут :3</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=tihq_bLfk08" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=1quKqf47V6s"><img class="project-img" src="https://i.ytimg.com/vi/1quKqf47V6s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDmM4JIc714XCdHbf-8SsDx8ImXjQ"></a>
+<h1>Учим Нейронные Сети за 1 час! | Python Tensorflow & PyTorch YOLO</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=1quKqf47V6s" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=IWDY2nLohIY"><img class="project-img" src="https://i.ytimg.com/vi/IWDY2nLohIY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD9OclZP40H-7nIPUCu1hIFnPtx1w"></a>
+<h1>Как сделать красивую программу под ПК? | Tauri за 10 минут!</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=IWDY2nLohIY" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=bVL9d0ldPkM"><img class="project-img" src="https://i.ytimg.com/vi/bVL9d0ldPkM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDHxhHs8Ngg4Izub5-ciPIGyLWmdA"></a>
+<h1>Я РЕАЛЬНО ДОБАВИЛ ГОДЗИЛЛУ В ГУГЛ ДИНОЗАВРИКА :3</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=bVL9d0ldPkM" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=_XZUTf7Hh_A"><img class="project-img" src="https://i.ytimg.com/vi/_XZUTf7Hh_A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCn8SkicBTA0K03Wj79W7gwg5LdMQ"></a>
+<h1>Ты НЕ ПРОГРАММИСТ без этих ПРОГРАММ!!1</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=_XZUTf7Hh_A" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=T66q3BhrB70"><img class="project-img" src="https://i.ytimg.com/vi/T66q3BhrB70/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBO1TLwrbr8jv97sOqOS6nnkTb6EA"></a>
+<h1>Кафе с Горничными (MaidCafe) на МайнШилд 3</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=T66q3BhrB70" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=i6bv0ctgNGI"><img class="project-img" src="https://i.ytimg.com/vi/i6bv0ctgNGI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwIX_fzyqNpTYrW-1glavS4LywpQ"></a>
+<h1>Самая БОЛЬШАЯ база на сервере - МайнШилд 3</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=i6bv0ctgNGI" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=kw2R76o0MRw"><img class="project-img" src="https://i.ytimg.com/vi/kw2R76o0MRw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDbKVcFcHb6chOAtB5VuMhouwXThg"></a>
+<h1>МайнШилд | Minecraft Клип - Yellow Fire 2022</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=kw2R76o0MRw" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=cJ_k7GDGb2k"><img class="project-img" src="https://i.ytimg.com/vi/cJ_k7GDGb2k/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGR_CyyHnnLu4e6WyzVphCWh171A"></a>
+<h1>Вот САМАЯ БОЛЬШАЯ БАЗА на МайнШилд 3</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=cJ_k7GDGb2k" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=MUYHkXawnns"><img class="project-img" src="https://i.ytimg.com/vi/MUYHkXawnns/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDSFswFoy2N1WPNR10UlGxiJBLl0w"></a>
+<h1>Главная ПРОБЛЕМА Ванильного Майнкрафта</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=MUYHkXawnns" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=9IehMkEu8l8"><img class="project-img" src="https://i.ytimg.com/vi/9IehMkEu8l8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9Su_9fnIfwllFtp8lYLvrhCIQ1A"></a>
+<h1>ХАЙДИ И НИКИ ПРАНКУЮТ БАЗУ ОБСИ?! - НОВАЯ ПАРОЧКА МШ? / Нарезка Майншилд 3</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=9IehMkEu8l8" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=zhxKZSmUyM4"><img class="project-img" src="https://i.ytimg.com/vi/zhxKZSmUyM4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWoEOo2b5WwBKxpSgqJRxkWYKzWA"></a>
+<h1>Я Построил ЭТО на БАЗАХ ИГРОКОВ на МайнШилд 3</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=zhxKZSmUyM4" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=HlJFntE0b4c"><img class="project-img" src="https://i.ytimg.com/vi/HlJFntE0b4c/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCjE9zYHG89tPmCo-cjKS0CJFm2gQ"></a>
+<h1>Heidi Montag - I'll Do It (Lyrics)</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=HlJFntE0b4c" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=DDXEuWpveFM"><img class="project-img" src="https://i.ytimg.com/vi/DDXEuWpveFM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB7jo1qDCgQlrn-0YwGXThjm4AIxA"></a>
+<h1>Первые 64 ЯБЛОКА НОТЧА на МайнШилд 3</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=DDXEuWpveFM" class="show">Смотреть</button>
+</div>
+
+<div class="video">
+<a href="https://www.youtube.com/watch?v=eKgjdXAf9oQ"><img class="project-img" src="https://i.ytimg.com/vi/eKgjdXAf9oQ/hqdefault.jpg?sqp=-oaymwE2COADEI4CSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AaAAuADigIMCAAQARhyIEsoOjAP&rs=AOn4CLCaEmdo4xrhCNseX0mDwoBCddEycw"></a>
+<h1>Heidi 2015 en français avec sous-titres</h1>
+<button type="submit" name="video" value="https://www.youtube.com/watch?v=eKgjdXAf9oQ" class="show">Смотреть</button>
+</div>
+
+<cut>
+    
+</div>
+</form>
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+</body>
+</html>

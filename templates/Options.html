@@ -301,6 +301,51 @@ form input[type="submit"]:hover {
   background-color: var(--dark-color);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
+.gamma-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+    
+}
+.gamma {
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.gamma:hover{
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px var(--hight-light);
+  padding: 20px;
+}
+
+.gamma-img {
+width: 100%;
+height: auto;
+}
+
+.gamma-title {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.gamma-description {
+margin-top: 0;
+margin-bottom: 10px;
+}
+
+.set {
+display: block;
+margin-top: 10px;
+padding: 10px 20px;
+background-color: #000;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
 </style>
 <button class="openbtn" onclick="openNav()"><b>Меню</b></button>
 
@@ -313,53 +358,17 @@ form input[type="submit"]:hover {
 
     <a href="https://github.com/Ywxig"><img align="left" class="dev" width="50px" height="50px" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"></a>
 </div>
-<form action="/COMMAND-index" method="POST">
-<div class="button-place">      
-    <button class="off" type="submit" value="off" name="command"><img align="center" class="ico" src="https://cdn4.iconfinder.com/data/icons/interface-essential-vol-6/24/power-button--power-button-on-off-512.png" alt=""></button>
-
-    <button class="volume-button" type="submit" name="command" value="volume+">Звук+</button>
-    <button class="volume-button" type="submit" name="command" value="volume-">Звук-</button>
+<form action="/ROOT-options" method="POST">
+<div class="elment">
+    <h1>Настройка собственного стиля</h1>
+    <input type="text" name="primary-color" value="Главный цвет">
+    <input type="text" name="text-color" value="Цвет текста">
+    <input type="text" name="background-color" value="Цвет фона">
+    <input type="text" name="hight-text" value="Цвет подсветки">
+    <input type="text" name="input-text-color" value="Цвет ввода">
+    <input type="text" name="border-radius" value="Скругление кнопок">
+    <button type="submit">Сохранить</button>
 </div>
-</form>
-<form action="/CONTROLL-index" method="POST">
-<div class="mouse-controller" align="center">
-    <div><button class="mouse" type="submit" name="command" value="mouse-left">Лкм</button><button class="mouse" type="submit" name="command" value="mouse-right">Пкм</button></div>
-    <table align="center">
-        <tr>
-            <td></td><td><button type="submit" name="command" value="up" class="btn-control">↑</button></td><td></td>
-        </tr>
-        <tr>
-            <td><button type="submit" name="command" value="left" class="btn-control">←</button></td><td></td><td><button class="btn-control" type="submit" name="command" value="right">→</button></td>
-        </tr>
-        <tr>
-            <td></td><td><button type="submit" name="command" value="down" class="btn-control" >↓</button></td><td></td>
-        </tr>
-    </table>
-</div>
-</form>
-<form action="/SCROLLING-index" method="POST">
-<div class="button-place">
-    <button class="scroll-button" type="submit" name="command" value="skroll-up">Скрол↑</button>
-    <button class="scroll-button" type="submit" name="command" value="skroll-down">Скрол↓</button>
-</div>
-</form>
-<form action="/MEDIA-index" method="POST">
-<div class="button-place">
-    <button type="submit" value="play" name="media" class="media-button"><img class="ico" src="https://img.freepik.com/free-icon/play-button_318-160304.jpg" alt=""></button>
-    <button type="submit" value="full" name="media" class="media-button"> <img class="ico" src="https://cdn-icons-png.flaticon.com/512/60/60694.png" alt=""></button>
-    <button type="submit" value="c" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/834/834862.png" alt=""></button>
-    <button type="submit" value="mute" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/727/727240.png" alt=""></button>
-    <button type="submit" value="next" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/0/304.png" alt=""></button>
-    <button type="submit" value="close" name="media" class="media-button"><img class="ico" src="https://cdn-icons-png.flaticon.com/512/112/112692.png" alt=""></button>
-</div>
-</form>
-<form action="/VIDEO-index" method="POST">
-<div class="button-place">
-    <input type="text" name="reqest">
-    <button type="submit" name="flag" value="search">Найти</button> <button name="flag" type="submit" value="open">Открыть</button> <button name="flag" type="submit" value="write">Нписать</button>
-</div>
-
-
 </form>
 <script>
 function openNav() {

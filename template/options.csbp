@@ -1,0 +1,24 @@
+@ file templates/Options.html
+html {
+doc.start
+
+CSS.start
+
+CSS.element css/root.css
+CSS.element css/buttons.css
+CSS.element css/sidebar.css
+CSS.element css/forms.css
+CSS.element css/gamma.css
+
+CSS.end
+
+HTML.element widgets/sidebar.html
+
+HTML.form.ROOT-options widgets/root.html
+
+HTML.element widgets/openSidebar.js
+
+doc.end
+}
+
+build html file
